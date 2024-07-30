@@ -1,4 +1,3 @@
-import './App.css';
 import NoticeBoard from "./notice/NoticeBoard";
 
 function App() {
