@@ -1,9 +1,9 @@
-import NoticeBoard from "./notice/NoticeBoard";
+import NoticePage from "./notice/NoticePage";
 
 function App() {
   return (
     <div className="App">
-      <NoticeBoard />
+      <NoticePage />
     </div>
   );
 }
