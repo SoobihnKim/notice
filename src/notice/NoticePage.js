@@ -1,10 +1,8 @@
 import React, {useCallback, useEffect, useState} from "react";
 import styles from "./NoticePage.module.scss"
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 import NoticeModal from "./NoticeModal";
 import {useDispatch, useSelector} from "react-redux";
-import useAuth from "../../../../hooks/useAuth";
-import { workplaceActions } from "../../../../store/workplace-slice";
 import {BASE_URL} from "../../../../config/host-config";
 import {noticeActions} from "../store/notice-slice";
 
@@ -20,15 +18,10 @@ const NoticePage = () => {
     const dispatch = useDispatch();
     const notices = useSelector((state) => state.notice.noticeList || []);
 
-    const navigate = useNavigate();
-    const userId = useAuth();
-
     const workplaceId = localStorage.getItem('workplaceId');
-    // 괴도 박성진 다녀감
     useEffect(() => {
         dispatch(workplaceActions.setCurrentPage({currentPage: 4}));
     }, [])
-    // 괴도 박성진 다녀감
 
     const fetchNotices = useCallback(async () => {
         setIsLoading(true);
